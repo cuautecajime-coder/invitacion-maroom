@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="¡Estás invitado! XV Años de Maroom Trejo Cuauteca">
+    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. Sábado 14 de Noviembre, Salón La Fortaleza.">
+    <meta property="og:image" content="portada-nueva.jpg">
+    <meta property="og:type" content="website">
+
+    <title>Mis XV Años - Maroom</title>
+    
+    <style>
+        /* --- ESTILOS DE LA PANTALLA DE APERTURA --- */
+        .pantalla-sobre {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #F5EAF5; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; 
+            transition: opacity 1s ease, transform 1s ease; 
+            cursor: pointer; 
+        }
+
+        .portada-celular {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            object-position: center; 
+        }
+        .abierto {
+            opacity: 0;
+            transform: translateY(-100%); 
+            pointer-events: none; 
+        }
+
+        body.bloqueado {
+            overflow: hidden;
+        }
+
+        /* --- ESTILOS GENERALES Y FONDO COMPLETO UNIFICADO --- */
+        body {
+            font-family: 'Georgia', serif; 
+            background-color: #FDF9F9; /* Fondo completo unificado para toda la página */
+            color: #5C4343;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-section {
+            padding: 60px 20px;
+            border-bottom: 2px solid #EED4D4;
+        }
+        h1 {
+            font-size: 3.5em;
+            color: #A36B6B; 
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .mensaje-contenedor {
+            padding: 50px 20px;
+        }
+        .mensaje {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- SECCIÓN: PAPÁS Y PADRINOS --- */
+        .padres-padrinos {
+            padding: 50px 20px;
+            border-top: 1px dashed #D5A6A6;
+            border-bottom: 1px dashed #D5A6A6;
+            margin: 0 20px;
+        }
+        
+        .titulo-grandioso {
+            font-size: 2.5em; 
+            color: #A36B6B; 
+            font-style: italic;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        
+        .texto-especial {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .nombres-importantes {
+            font-size: 1.8em;
+            color: #A36B6B;
+            font-style: italic;
+            margin: 10px 0 30px 0;
+        }
+        .titulo-pequeno {
+            font-size: 0.9em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #7A5252;
+        }
+        
+        /* --- SECCIÓN 3: GALERÍA (CARRUSEL) --- */
+        .galeria {
+            padding: 50px 20px;
+        }
+        .carrusel-contenedor {
+            position: relative;
+            max-width: 350px; 
+            margin: 0 auto; 
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            overflow: hidden; 
+            background: #fff;
+        }
+        .foto-carrusel {
+            display: none; 
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .foto-carrusel.activa {
+            display: block; 
+            animation: aparecer 0.6s ease-in-out;
+        }
+        
+        .flecha {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(181, 127, 127, 0.8); 
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            z-index: 10;
+        }
+        .flecha:hover {
+            background-color: #A36B6B; 
+        }
+        #btn-prev { left: 10px; }
+        #btn-next { right: 10px; }
+
+        @keyframes aparecer {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+        
+        /* --- SECCIÓN 4: DETALLES --- */
+        .detalles {
+            min-height: 500px; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            border-top: 2px solid #EED4D4;
+        }
+        .btn {
+            background-color: #B57F7F; 
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #A36B6B;
+        }
+
+        .contador {
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+            margin: 30px 0;
+        }
+        .tiempo {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 10px 15px;
+            border-radius: 12px; 
+            min-width: 65px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+            border: 1px solid #EED4D4;
+        }
+        .tiempo span {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #A36B6B; 
+            display: block;
+        }
+        .tiempo p {
+            margin: 0;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5C4343; 
+        }
+    </style>
+</head>
+<body class="bloqueado"> 
+
+    <div id="sobre" class="pantalla-sobre">
+        <img src="maroom1.2.jpg" alt="Portada de la invitación" class="portada-celular">
+    </div>
+
+    <div class="hero-section"> 
+        <p style="letter-spacing: 3px; font-size: 0.9em;">HAY MOMENTOS INOLVIDABLES...</p>
+        <h1>Maroom Trejo Cuauteca</h1>
+        <p style="font-size: 1.5em; color: #7A5252;">Mis XV Años</p>
+    </div>
+
+    <div class="mensaje-contenedor">
+        <div class="mensaje">
+            <p>Hay momentos en la vida que imaginamos desde niñas, y compartirlos con las personas que más queremos los hace aún más mágicos.<br><br>Me llena de emoción invitarte a celebrar conmigo este día tan especial y formar parte de mi historia.</p>
+        </div>
+    </div>
+
+    <div class="padres-padrinos">
+        <h2 class="titulo-grandioso">Mis XV Años</h2> 
+        <p class="texto-especial">Eres una persona muy especial en mi vida, y es por eso que fuiste elegido(a) para acompañarme en esta noche mágica.</p>
+        
+        <p class="titulo-pequeno">Con la bendición de Dios y de mis padres:</p>
+        <div class="nombres-importantes">
+            [Daniela Resendiz]<br>&<br>[Josue Trejo]
+        </div>
+
+        <p class="titulo-pequeno">Y en compañía de mis padrinos:</p>
+        <div class="nombres-importantes">
+            [Emily Cuauteca]<br>&<br>[Diego Cuauteca]
+        </div>
+    </div>
+
+    <div class="galeria">
+        <h2 style="color: #A36B6B; margin-bottom: 30px;">Mis Momentos</h2>
+        <div class="carrusel-contenedor">
+            <button id="btn-prev" class="flecha">&#10094;</button>
+            
+            <img src="Foto1.jpg" alt="Foto de Maroom 1" class="foto-carrusel activa">
+            <img src="Foto2.jpg" alt="Foto de Maroom 2" class="foto-carrusel">
+            <img src="Foto3.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto4.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto5.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto6.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto7.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto8.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto9.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto10.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto11.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto12.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto13.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto14.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto15.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto16.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto17.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto18.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto19.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto20.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto21.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto22.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto23.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto24.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto25.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto26.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto27.jpeg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto28.jpeg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto29.jpeg" alt="Foto de Maroom 3" class="foto-carrusel">
+
+            <button id="btn-next" class="flecha">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="detalles">
+        <h2 style="color: #A36B6B;">El Gran Día</h2>
+        <p><strong>Fecha:</strong> Sábado, 14 de Noviembre de 2026</p>
+        <p><strong>Lugar:</strong> Salón "La Fortaleza"</p>
+
+        <div id="cuenta-regresiva" class="contador">
+            <div class="tiempo"><span id="dias">00</span><p>Días</p></div>
+            <div class="tiempo"><span id="horas">00</span><p>Hrs</p></div>
+            <div class="tiempo"><span id="minutos">00</span><p>Min</p></div>
+            <div class="tiempo"><span id="segundos">00</span><p>Seg</p></div>
+        </div>
+        
+        <a href="https://maps.app.goo.gl/p1Fiptrqwxw1ro3y7?g_st=aw" target="_blank" class="btn">Ver Ubicación en el Mapa</a>
+    </div>
+
+    <!-- SCRIPT DE FUNCIONAMIENTO -->
+    <script>
+        // --- MAGIA PARA ABRIR LA PORTADA ---
+        const sobre = document.getElementById('sobre');
+        const body = document.body;
+
+        sobre.addEventListener('click', function() {
+            sobre.classList.add('abierto');
+            body.classList.remove('bloqueado'); 
+            
+            setTimeout(() => {
+                sobre.style.display = 'none';
+            }, 1000);
+        });
+
+        // --- MAGIA DEL CARRUSEL DE FOTOS ---
+        let indiceFoto = 0;
+        const fotos = document.querySelectorAll('.foto-carrusel');
+
+        document.getElementById('btn-next').addEventListener('click', function() {
+            fotos[indiceFoto].classList.remove('activa');
+            indiceFoto = (indiceFoto + 1) % fotos.length;
+            fotos[indiceFoto].classList.add('activa');
+        });
+
+        document.getElementById('btn-prev').addEventListener('click', function() {
+            fotos[indiceFoto].classList.remove('activa');
+            indiceFoto = (indiceFoto - 1 + fotos.length) % fotos.length;
+            fotos[indiceFoto].classList.add('activa');
+        });
+
+        // --- MAGIA DE LA CUENTA REGRESIVA ---
+        const fechaEvento = new Date("Nov 14, 2026 20:00:00").getTime();
+
+        const actualizarReloj = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaEvento - ahora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
+
+            if (distancia < 0) {
+                clearInterval(actualizarReloj);
+                document.getElementById("cuenta-regresiva").innerHTML = "<h3 style='color: #A36B6B;'>¡Llegó el gran día!</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
