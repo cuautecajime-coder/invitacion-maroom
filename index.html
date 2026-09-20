@@ -19,7 +19,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: #F5EAF5; 
+            background-color: #EBF2FA; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,92 +44,159 @@
             overflow: hidden;
         }
 
-        /* --- ESTILOS GENERALES Y FONDO COMPLETO UNIFICADO --- */
+        /* --- ESTILOS GENERALES Y FONDO DE FLORES MÁS PEQUEÑO --- */
         body {
             font-family: 'Georgia', serif; 
-            background-color: #FDF9F9; /* Fondo completo unificado para toda la página */
-            color: #5C4343;
+            background-image: url('marco.png'); 
+            /* AQUÍ AJUSTAMOS EL TAMAÑO: 400px hace que el patrón de flores se vea más pequeño */
+            background-size: 400px; 
+            background-repeat: repeat; /* Hace que se repita como un patrón hermoso por toda la página */
+            background-position: center;
+            background-attachment: fixed; 
+            background-color: #F7FBFC; 
+            color: #2C3E50;
             text-align: center;
             margin: 0;
             padding: 0;
         }
+
+        /* Tarjetas de contenido translúcidas */
+        .seccion-contenido {
+            background-color: rgba(255, 255, 255, 0.75); 
+            backdrop-filter: blur(3px); 
+            margin: 30px auto;
+            max-width: 650px;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(27, 54, 93, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
         
         .hero-section {
-            padding: 60px 20px;
-            border-bottom: 2px solid #EED4D4;
+            padding: 30px 10px;
         }
         h1 {
-            font-size: 3.5em;
-            color: #A36B6B; 
+            font-size: 3.2em;
+            color: #1B365D; 
             margin: 10px 0;
             font-style: italic;
         }
         
-        .mensaje-contenedor {
-            padding: 50px 20px;
-        }
         .mensaje {
-            font-size: 1.2em;
+            font-size: 1.15em;
             line-height: 1.6;
             max-width: 600px;
             margin: 0 auto;
+            color: #2C3E50;
         }
 
         /* --- SECCIÓN: PAPÁS Y PADRINOS --- */
         .padres-padrinos {
-            padding: 50px 20px;
-            border-top: 1px dashed #D5A6A6;
-            border-bottom: 1px dashed #D5A6A6;
-            margin: 0 20px;
+            padding: 40px 20px;
+            border-top: 1px dashed rgba(163, 193, 173, 0.6);
+            border-bottom: 1px dashed rgba(163, 193, 173, 0.6);
+            margin: 30px auto;
+            max-width: 650px;
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(3px);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(27, 54, 93, 0.12);
         }
         
         .titulo-grandioso {
-            font-size: 2.5em; 
-            color: #A36B6B; 
+            font-size: 2.3em; 
+            color: #1B365D; 
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             margin-top: 0;
         }
         
         .texto-especial {
-            font-size: 1.1em;
+            font-size: 1.05em;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            color: #34495E;
         }
         .nombres-importantes {
-            font-size: 1.8em;
-            color: #A36B6B;
+            font-size: 1.6em;
+            color: #29528C;
             font-style: italic;
-            margin: 10px 0 30px 0;
+            margin: 10px 0 25px 0;
         }
         .titulo-pequeno {
-            font-size: 0.9em;
+            font-size: 0.85em;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #7A5252;
+            color: #5C768D;
+        }
+
+        /* --- SECCIÓN: CONTADOR --- */
+        .seccion-contador {
+            padding: 30px 20px;
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(3px);
+            border-radius: 15px;
+            margin: 30px auto;
+            max-width: 650px;
+            box-shadow: 0 4px 20px rgba(27, 54, 93, 0.12);
+        }
+
+        .contador {
+            display: flex;
+            justify-content: center;
+            gap: 12px; 
+            margin: 20px 0 10px 0;
+        }
+        .tiempo {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 10px 12px;
+            border-radius: 12px; 
+            min-width: 60px;
+            box-shadow: 0 4px 6px rgba(27, 54, 93, 0.1); 
+            border: 1px solid #C4D3E8;
+        }
+        .tiempo span {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1B365D; 
+            display: block;
+        }
+        .tiempo p {
+            margin: 0;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5C768D; 
         }
         
-        /* --- SECCIÓN 3: GALERÍA (CARRUSEL) --- */
+        /* --- SECCIÓN: GALERÍA (CARRUSEL) --- */
         .galeria {
-            padding: 50px 20px;
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(3px);
+            margin: 30px auto;
+            max-width: 650px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(27, 54, 93, 0.12);
         }
         .carrusel-contenedor {
             position: relative;
-            max-width: 350px; 
+            max-width: 330px; 
             margin: 0 auto; 
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 16px rgba(27, 54, 93, 0.15);
             overflow: hidden; 
             background: #fff;
+            border: 2px solid #C4D3E8;
         }
         .foto-carrusel {
             display: none; 
             width: 100%;
             height: auto;
-            border-radius: 15px;
+            border-radius: 13px;
         }
         .foto-carrusel.activa {
             display: block; 
@@ -141,11 +208,11 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: rgba(181, 127, 127, 0.8); 
+            width: 38px;
+            height: 38px;
+            background-color: rgba(27, 54, 93, 0.8); 
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             border: none;
             border-radius: 50%;
@@ -156,7 +223,7 @@
             z-index: 10;
         }
         .flecha:hover {
-            background-color: #A36B6B; 
+            background-color: #1B365D; 
         }
         #btn-prev { left: 10px; }
         #btn-next { right: 10px; }
@@ -166,18 +233,18 @@
             to { opacity: 1; }
         }
         
-        /* --- SECCIÓN 4: DETALLES --- */
+        /* --- SECCIÓN: DETALLES --- */
         .detalles {
-            min-height: 500px; 
-            display: flex; 
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 20px;
-            border-top: 2px solid #EED4D4;
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(3px);
+            margin: 30px auto 50px auto;
+            max-width: 650px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(27, 54, 93, 0.12);
         }
         .btn {
-            background-color: #B57F7F; 
+            background-color: #1B365D; 
             color: white;
             padding: 12px 30px;
             text-decoration: none;
@@ -185,59 +252,39 @@
             font-weight: bold;
             display: inline-block;
             margin-top: 20px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(27, 54, 93, 0.2);
         }
         .btn:hover {
-            background-color: #A36B6B;
-        }
-
-        .contador {
-            display: flex;
-            justify-content: center;
-            gap: 15px; 
-            margin: 30px 0;
-        }
-        .tiempo {
-            background-color: rgba(255, 255, 255, 0.8); 
-            padding: 10px 15px;
-            border-radius: 12px; 
-            min-width: 65px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
-            border: 1px solid #EED4D4;
-        }
-        .tiempo span {
-            font-size: 2.2em;
-            font-weight: bold;
-            color: #A36B6B; 
-            display: block;
-        }
-        .tiempo p {
-            margin: 0;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5C4343; 
+            background-color: #10213B;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="bloqueado"> 
 
     <div id="sobre" class="pantalla-sobre">
-        <img src="maroom1.2.jpg" alt="Portada de la invitación" class="portada-celular">
+        <img src="maroom1.3.png" alt="Portada de la invitación" class="portada-celular">
     </div>
 
-    <div class="hero-section"> 
-        <p style="letter-spacing: 3px; font-size: 0.9em;">HAY MOMENTOS INOLVIDABLES...</p>
-        <h1>Maroom Trejo Cuauteca</h1>
-        <p style="font-size: 1.5em; color: #7A5252;">Mis XV Años</p>
-    </div>
-
-    <div class="mensaje-contenedor">
-        <div class="mensaje">
-            <p>Hay momentos en la vida que imaginamos desde niñas, y compartirlos con las personas que más queremos los hace aún más mágicos.<br><br>Me llena de emoción invitarte a celebrar conmigo este día tan especial y formar parte de mi historia.</p>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="seccion-contenido">
+        
+        <div class="hero-section"> 
+            <p style="letter-spacing: 3px; font-size: 0.9em; color: #5C768D;">HAY MOMENTOS INOLVIDABLES...</p>
+            <h1>Maroom Trejo Cuauteca</h1>
+            <p style="font-size: 1.4em; color: #5C768D;">Mis XV Años</p>
         </div>
+
+        <div class="mensaje-contenedor">
+            <div class="mensaje">
+                <p>Hay momentos en la vida que imaginamos desde niñas, y compartirlos con las personas que más queremos los hace aún más mágicos.<br><br>Me llena de emoción invitarte a celebrar conmigo este día tan especial y formar parte de mi historia.</p>
+            </div>
+        </div>
+
     </div>
 
+    <!-- SECCIÓN: PAPÁS Y PADRINOS -->
     <div class="padres-padrinos">
         <h2 class="titulo-grandioso">Mis XV Años</h2> 
         <p class="texto-especial">Eres una persona muy especial en mi vida, y es por eso que fuiste elegido(a) para acompañarme en esta noche mágica.</p>
@@ -253,56 +300,79 @@
         </div>
     </div>
 
-    <div class="galeria">
-        <h2 style="color: #A36B6B; margin-bottom: 30px;">Mis Momentos</h2>
-        <div class="carrusel-contenedor">
-            <button id="btn-prev" class="flecha">&#10094;</button>
-            
-            <img src="Foto1.jpg" alt="Foto de Maroom 1" class="foto-carrusel activa">
-            <img src="Foto2.jpg" alt="Foto de Maroom 2" class="foto-carrusel">
-            <img src="Foto3.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto4.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto5.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto6.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto7.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto8.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto9.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto10.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto11.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto12.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto13.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto14.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto15.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto16.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto17.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto18.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto19.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto20.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto21.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto22.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto23.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto24.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto25.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto26.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto27.jpeg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto28.jpeg" alt="Foto de Maroom 3" class="foto-carrusel">
-            <img src="Foto29.jpeg" alt="Foto de Maroom 3" class="foto-carrusel">
-
-            <button id="btn-next" class="flecha">&#10095;</button>
-        </div>
-    </div>
-
-    <div class="detalles">
-        <h2 style="color: #A36B6B;">El Gran Día</h2>
-        <p><strong>Fecha:</strong> Sábado, 14 de Noviembre de 2026</p>
-        <p><strong>Lugar:</strong> Salón "La Fortaleza"</p>
-
+    <!-- SECCIÓN: CONTADOR -->
+    <div class="seccion-contador">
+        <h3 style="color: #1B365D; margin-top: 0; font-style: italic; font-size: 1.7em;">Falta muy poco...</h3>
         <div id="cuenta-regresiva" class="contador">
             <div class="tiempo"><span id="dias">00</span><p>Días</p></div>
             <div class="tiempo"><span id="horas">00</span><p>Hrs</p></div>
             <div class="tiempo"><span id="minutos">00</span><p>Min</p></div>
             <div class="tiempo"><span id="segundos">00</span><p>Seg</p></div>
         </div>
+    </div>
+
+    <!-- SECCIÓN: GALERÍA (CARRUSEL) -->
+    <div class="galeria">
+        <h2 style="color: #1B365D; margin-bottom: 25px; font-style: italic; font-size: 2.2em;">Mis Momentos</h2>
+        <div class="carrusel-contenedor">
+            <button id="btn-prev" class="flecha">&#10094;</button>
+            
+            <img src="Foto1.jpg" alt="Foto de Maroom 1" class="foto-carrusel activa">
+            <img src="Foto2.jpg" alt="Foto de Maroom 2" class="foto-carrusel">
+            <img src="Foto3.jpg" alt="Foto de Maroom 3" class="foto-carrusel">
+            <img src="Foto4.jpg" alt="Foto de Maroom 4" class="foto-carrusel">
+            <img src="Foto5.jpg" alt="Foto de Maroom 5" class="foto-carrusel">
+            <img src="Foto6.jpg" alt="Foto de Maroom 6" class="foto-carrusel">
+            <img src="Foto7.jpg" alt="Foto de Maroom 7" class="foto-carrusel">
+            <img src="Foto8.jpg" alt="Foto de Maroom 8" class="foto-carrusel">
+            <img src="Foto9.jpg" alt="Foto de Maroom 9" class="foto-carrusel">
+            <img src="Foto10.jpg" alt="Foto de Maroom 10" class="foto-carrusel">
+            <img src="Foto11.jpg" alt="Foto de Maroom 11" class="foto-carrusel">
+            <img src="Foto12.jpg" alt="Foto de Maroom 12" class="foto-carrusel">
+            <img src="Foto13.jpg" alt="Foto de Maroom 13" class="foto-carrusel">
+            <img src="Foto14.jpg" alt="Foto de Maroom 14" class="foto-carrusel">
+            <img src="Foto15.jpg" alt="Foto de Maroom 15" class="foto-carrusel">
+            <img src="Foto16.jpg" alt="Foto de Maroom 16" class="foto-carrusel">
+            <img src="Foto17.jpg" alt="Foto de Maroom 17" class="foto-carrusel">
+            <img src="Foto18.jpg" alt="Foto de Maroom 18" class="foto-carrusel">
+            <img src="Foto19.jpg" alt="Foto de Maroom 19" class="foto-carrusel">
+            <img src="Foto20.jpg" alt="Foto de Maroom 20" class="foto-carrusel">
+            <img src="Foto21.jpg" alt="Foto de Maroom 21" class="foto-carrusel">
+            <img src="Foto22.jpg" alt="Foto de Maroom 22" class="foto-carrusel">
+            <img src="Foto23.jpg" alt="Foto de Maroom 23" class="foto-carrusel">
+            <img src="Foto24.jpg" alt="Foto de Maroom 24" class="foto-carrusel">
+            <img src="Foto25.jpg" alt="Foto de Maroom 25" class="foto-carrusel">
+            <img src="Foto26.jpg" alt="Foto de Maroom 26" class="foto-carrusel">
+            <img src="Foto27.jpeg" alt="Foto de Maroom 27" class="foto-carrusel">
+            <img src="Foto28.jpeg" alt="Foto de Maroom 28" class="foto-carrusel">
+            <img src="Foto29.jpeg" alt="Foto de Maroom 29" class="foto-carrusel">
+            <img src="Foto30.jpeg" alt="Foto de Maroom 30" class="foto-carrusel">
+            <img src="Foto31.jpeg" alt="Foto de Maroom 31" class="foto-carrusel">
+            <img src="Foto32.jpeg" alt="Foto de Maroom 32" class="foto-carrusel">
+            <img src="Foto33.jpeg" alt="Foto de Maroom 33" class="foto-carrusel">
+            <img src="Foto34.jpeg" alt="Foto de Maroom 34" class="foto-carrusel">
+            <img src="Foto35.jpeg" alt="Foto de Maroom 35" class="foto-carrusel">
+            <img src="Foto36.jpeg" alt="Foto de Maroom 36" class="foto-carrusel">
+            <img src="Foto37.jpeg" alt="Foto de Maroom 37" class="foto-carrusel">
+            <img src="Foto38.jpeg" alt="Foto de Maroom 38" class="foto-carrusel">
+            <img src="Foto39.jpeg" alt="Foto de Maroom 39" class="foto-carrusel">
+            <img src="Foto40.jpeg" alt="Foto de Maroom 40" class="foto-carrusel">
+            <img src="Foto41.jpeg" alt="Foto de Maroom 41" class="foto-carrusel">
+            <img src="Foto42.jpeg" alt="Foto de Maroom 42" class="foto-carrusel">
+            <img src="Foto43.jpeg" alt="Foto de Maroom 43" class="foto-carrusel">
+            <img src="Foto45.jpeg" alt="Foto de Maroom 45" class="foto-carrusel">
+            <img src="Foto46.jpeg" alt="Foto de Maroom 46" class="foto-carrusel">
+            <img src="Foto47.jpeg" alt="Foto de Maroom 47" class="foto-carrusel">
+            
+            <button id="btn-next" class="flecha">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN: DETALLES Y MAPA -->
+    <div class="detalles">
+        <h2 style="color: #1B365D; font-style: italic; font-size: 2.2em; margin-top: 0;">El Gran Día</h2>
+        <p style="font-size: 1.1em;"><strong>Fecha:</strong> Sábado, 14 de Noviembre de 2026</p>
+        <p style="font-size: 1.1em;"><strong>Lugar:</strong> Salón "La Fortaleza"</p>
         
         <a href="https://maps.app.goo.gl/p1Fiptrqwxw1ro3y7?g_st=aw" target="_blank" class="btn">Ver Ubicación en el Mapa</a>
     </div>
@@ -342,8 +412,8 @@
         const fechaEvento = new Date("Nov 14, 2026 20:00:00").getTime();
 
         const actualizarReloj = setInterval(function() {
-            const ahora = new Date().getTime();
-            const distancia = fechaEvento - ahora;
+            const horaActual = new Date().getTime();
+            const distancia = fechaEvento - horaActual;
 
             const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -357,7 +427,7 @@
 
             if (distancia < 0) {
                 clearInterval(actualizarReloj);
-                document.getElementById("cuenta-regresiva").innerHTML = "<h3 style='color: #A36B6B;'>¡Llegó el gran día!</h3>";
+                document.getElementById("cuenta-regresiva").innerHTML = "<h3 style='color: #1B365D;'>¡Llegó el gran día!</h3>";
             }
         }, 1000);
     </script>
